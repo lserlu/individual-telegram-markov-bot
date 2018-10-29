@@ -1,0 +1,23 @@
+{
+  "name": "individual-telegram-markov-bot",
+  "version": "1.0.0",
+  "description": "Node Telegram bot that creates Markov chains based on a given user.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kiroc/individual-telegram-markov-bot.git"
+  },
+  "author": "Sergio Fernández <sergio.fdezduran@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kiroc/individual-telegram-markov-bot/issues"
+  },
+  "homepage": "https://github.com/kiroc/individual-telegram-markov-bot#readme",
+  "dependencies": {
+    "markovchain": "^1.0.2",
+    "node-telegram-bot-api": "^0.30.0"
+  }
+}
