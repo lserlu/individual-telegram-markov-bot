@@ -1,8 +1,8 @@
 const MarkovChain = require("markovchain");
 const fs = require("fs");
 const TelegramBot = require("node-telegram-bot-api");
-let config = require("./config.js");
-const bot = new TelegramBot(config.config.token, { polling: true });
+const config = require("./config.json")
+const bot = new TelegramBot(config.token, { polling: true });
 let arrayQuotes = [];
 let ranNum;
 
@@ -11,12 +11,12 @@ bot.on("message", msg => {
   let fromId = msg.from.id;
   let receivedMessage = msg.text.toString();
   if (
-    fromId == config.config.USER_ID &&
+    fromId == config.USER_ID &&
     receivedMessage.trim().indexOf(" ") != -1
   ) {
     console.log(msg.from.username + ": " + receivedMessage);
     arrayQuotes[arrayQuotes.length] = receivedMessage;
-    if (arrayQuotes.length >= config.config.MESSAGES_TO_UPDATE) {
+    if (arrayQuotes.length >= config.MESSAGES_TO_UPDATE) {
       for (let x = arrayQuotes.length; x > 0; --x) {
         fs.appendFile("quotes.txt", arrayQuotes[x] + "\n", function(err) {
           if (err) throw err;
@@ -39,7 +39,7 @@ bot.onText(/\/ping/, msg => {
 });
 
 function changeRanNum() {
-  ranNum = Math.floor(Math.random() * config.config.MAX_CHAR + 1);
+  ranNum = Math.floor(Math.random() * config.MAX_CHAR + 1);
 }
 
 let stopCharLim = function(sentence) {
