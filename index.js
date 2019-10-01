@@ -35,7 +35,7 @@ bot.onText(/\/settings/, msg => {
 });
 
 bot.onText(/\/ping/, msg => {
-  bot.sendMessage(msg.chat.id, "pong");
+  bot.sendMessage(msg.chat.id, "pong (" + msg.chat.id + ")");
 });
 
 function changeRanNum() {
