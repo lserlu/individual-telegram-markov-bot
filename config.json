@@ -1,0 +1,6 @@
+{
+  "token": "BOT-TOKEN-FROM-BOTFATHER",
+  "USER_ID": "<TELEGRAM-USER-ID",
+  "MAX_CHAR": 300, //Max char of the chain
+  "MESSAGES_TO_UPDATE": 10 //Number of messages until next file update
+}
