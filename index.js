@@ -14,7 +14,8 @@ bot.on("message", msg => {
     fromId == config.config.USER_ID &&
     receivedMessage.trim().indexOf(" ") != -1
   ) {
-    console.log(msg.from.username + ": " + receivedMessage);
+    // dont print newlines to console to make it tidier
+    console.log(msg.from.username + ": " + receivedMessage.replace("\n", "\\n");
     arrayQuotes[arrayQuotes.length] = receivedMessage;
     if (arrayQuotes.length >= config.config.MESSAGES_TO_UPDATE) {
       for (let x = arrayQuotes.length; x > 0; --x) {
@@ -35,7 +36,8 @@ bot.onText(/\/settings/, msg => {
 });
 
 bot.onText(/\/ping/, msg => {
-  bot.sendMessage(msg.chat.id, "pong (" + msg.chat.id + ")");
+  // print some debug information too
+  bot.sendMessage(msg.chat.id, "pong\nMessage ID: " + msg.id + "\nChat ID: " + msg.chat.id);
 });
 
 function changeRanNum() {
